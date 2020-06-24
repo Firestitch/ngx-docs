@@ -1,0 +1,13 @@
+<span>Version: </span>
+<button mat-button [fsMenuTriggerFor]="menu">
+  {{ (docs.activeVersion$ | async).version }}
+  <mat-icon>arrow_drop_down</mat-icon>
+</button>
+
+<fs-menu #menu>
+  <ng-container *ngFor="let version of docs.versions$ | async">
+    <ng-template fs-menu-item (click)="changeVersion(version.version)">
+      {{ version.version }}
+    </ng-template>
+  </ng-container>
+</fs-menu>

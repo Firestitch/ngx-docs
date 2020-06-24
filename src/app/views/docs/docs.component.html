@@ -1,0 +1,12 @@
+<ng-container *fsSkeleton="(docs.data$ | async) as data">
+  <div class="container">
+    <div class="nav">
+        <fs-docs-sidenav [data]="data"></fs-docs-sidenav>
+    </div>
+    <div class="content">
+      <mat-card>
+        <router-outlet></router-outlet>
+      </mat-card>
+    </div>
+  </div>
+</ng-container>

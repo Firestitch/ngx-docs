@@ -1,0 +1,12 @@
+<h1>Modules</h1>
+<hr>
+
+<ng-container *ngFor="let doc of docs">
+  <div class="list-item">
+    <h2>{{ doc.name }}</h2>
+
+    <div>
+      <b>Exports: {{ doc.exports | printExportedSelectors}}</b>
+    </div>
+  </div>
+</ng-container>

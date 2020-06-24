@@ -1,0 +1,10 @@
+<div>
+  <p>{{ item.description }}</p>
+  <b>interface</b> {{ item.name }} &#123;
+    <ul class="interface-properties">
+      <li *ngFor="let p of item.properties">
+        {{ p.name }}<ng-container *ngIf="p.isOptional">?</ng-container>: {{ p.type }}
+      </li>
+    </ul>
+  &#125;
+</div>

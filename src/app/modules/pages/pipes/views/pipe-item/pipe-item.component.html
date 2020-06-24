@@ -1,0 +1,7 @@
+<h1>{{ docItem.name }} {{docItem.selector}}</h1>
+<hr>
+<p>Declared In: <a [routerLink]="['/modules', docItem.declaredIn]">{{ docItem.declaredIn }}</a></p>
+
+<p>{{ docItem.description }}</p>
+
+{{ docItem.parameters | json }}

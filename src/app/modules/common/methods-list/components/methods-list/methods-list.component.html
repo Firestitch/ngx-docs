@@ -1,0 +1,33 @@
+<ng-content></ng-content>
+
+<ng-container *ngFor="let method of methods">
+  <table class="fs-docs-table methods-list-table">
+    <thead class="method-header">
+      <tr>
+        <th colspan="2">
+          {{ method.name }}<ng-container *ngIf="method.type">: {{ method.type }}</ng-container>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="method.description">
+        <td colspan="2">
+          <p>{{ method.description }}</p>
+        </td>
+      </tr>
+      <ng-container *ngFor="let parameter of method.parameters">
+        <tr>
+          <td colspan="2" class="method-sub-header">Parameters</td>
+        </tr>
+        <tr>
+          <td>
+            {{ parameter.name }}<ng-container *ngIf="parameter.isOptional">?</ng-container><ng-container *ngIf="parameter.type">: {{ parameter.type }}</ng-container>
+          </td>
+          <td>
+            {{ parameter.description }}
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</ng-container>

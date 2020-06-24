@@ -1,0 +1,10 @@
+<h1>
+  Pipes
+</h1>
+<hr>
+
+<ng-container *ngFor="let doc of docs">
+  <div class="list-item">
+    <h2><a [routerLink]="['/pipes', doc.name]">{{ doc.name }}</a></h2>
+  </div>
+</ng-container>

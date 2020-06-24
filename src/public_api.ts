@@ -2,6 +2,5 @@
  * Public API Surface of fs-menu
  */
 
-export { FsComponentModule } from './app/fs-component.module';
+export { FsDocsModule } from './app/docs.module';
 
-export { FsComponentComponent } from './app/components/component/component.component';

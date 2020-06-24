@@ -1,0 +1,12 @@
+<ul>
+  <ng-container *ngFor="let item of list">
+    <li>
+      <ng-container *ngIf="item.internal; else externalModule">
+        <a [routerLink]="['/modules', item.name]">{{ item.name }}</a>
+      </ng-container>
+      <ng-template #externalModule>
+        {{ item.name }}
+      </ng-template>
+    </li>
+  </ng-container>
+</ul>

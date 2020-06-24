@@ -1,0 +1,19 @@
+<ng-container *ngIf="declarations.length > 0">
+  <ng-content></ng-content>
+  <ul>
+    <ng-container *ngFor="let item of declarations">
+      <li *ngIf="type !== 'modules'">
+        <a [routerLink]="['/', type, item.name]">{{ item.name }}</a>
+        Selector: {{ item.selector }}
+      </li>
+      <li *ngIf="type === 'modules'">
+        <ng-container *ngIf="item.internal" else externalModule>
+          <a [routerLink]="['/', type, item.name]">{{ item.name }}</a>
+        </ng-container>
+        <ng-template #externalModule>
+          {{ item.name }}
+        </ng-template>
+      </li>
+    </ng-container>
+  </ul>
+</ng-container>

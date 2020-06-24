@@ -1,0 +1,11 @@
+<h1>
+  <ng-container *ngIf="type === 'classes'">Classes</ng-container>
+  <ng-container *ngIf="type === 'providers'">Providers</ng-container>
+</h1>
+<hr>
+
+<ng-container *ngFor="let doc of docs">
+  <div class="list-item">
+    <h2><a [routerLink]="['/', type, doc.name]">{{ doc.name }}</a></h2>
+  </div>
+</ng-container>

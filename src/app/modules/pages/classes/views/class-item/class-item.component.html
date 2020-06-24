@@ -1,0 +1,19 @@
+<h1>{{ docItem.name }}</h1>
+<hr>
+<p>{{ docItem.description }}</p>
+
+<fs-docs-property-list *ngIf="docItem.properties.length > 0" [properties]="docItem.properties">
+  <h3>Properties</h3>
+</fs-docs-property-list>
+
+<fs-docs-methods-list *ngIf="docItem.methods.length > 0" [methods]="docItem.methods">
+  <h3>Methods</h3>
+</fs-docs-methods-list>
+
+<fs-docs-property-list *ngIf="docItem.staticProperties.length > 0" [properties]="docItem.staticProperties">
+  <h3>Static Properties</h3>
+</fs-docs-property-list>
+
+<fs-docs-methods-list *ngIf="docItem.staticMethods.length > 0" [methods]="docItem.staticMethods">
+  <h3>Static Methods</h3>
+</fs-docs-methods-list>

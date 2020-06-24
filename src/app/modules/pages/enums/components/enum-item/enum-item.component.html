@@ -1,0 +1,11 @@
+<div>
+  <p>{{ item.description }}</p>
+  <b>enum</b> {{ item.name }} &#123;
+    <ul class="enum-members">
+      <li *ngFor="let m of item.members">
+        <p class="description" *ngIf="m.description">// {{ m.description }}</p>
+        {{ m.key }}<ng-container *ngIf="m.value"> = {{ m.value }}</ng-container>
+      </li>
+    </ul>
+  &#125;
+</div>

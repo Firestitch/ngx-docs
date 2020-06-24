@@ -1,0 +1,61 @@
+<h1>{{ docItem.name }}</h1>
+<hr>
+
+<p>{{ docItem.description }}</p>
+
+<div *ngIf="docItem.imports.length > 0">
+  <h3>Module depends on:</h3>
+
+  <fs-docs-imports-list [imports]="docItem.imports"></fs-docs-imports-list>
+</div>
+
+
+<ng-container *ngIf="docItem.exports.components.length > 0">
+  <fs-docs-declarations-list [declarations]="docItem.exports.components" type="components">
+    <h3>Exports components:</h3>
+  </fs-docs-declarations-list>
+</ng-container>
+
+<ng-container *ngIf="docItem.exports.directives.length > 0">
+  <fs-docs-declarations-list [declarations]="docItem.exports.directives" type="directives">
+    <h3>Exports directives:</h3>
+  </fs-docs-declarations-list>
+</ng-container>
+
+
+<ng-container *ngIf="docItem.exports.pipes.length > 0">
+  <fs-docs-declarations-list [declarations]="docItem.exports.pipes" type="pipes">
+    <h3>Exports pipes:</h3>
+  </fs-docs-declarations-list>
+</ng-container>
+
+<ng-container *ngIf="docItem.exports.modules.length > 0">
+  <fs-docs-declarations-list [declarations]="docItem.exports.modules" type="modules">
+    <h3>Exports Modules:</h3>
+  </fs-docs-declarations-list>
+</ng-container>
+
+<ng-container *ngIf="docItem.declarations.components.length > 0">
+  <fs-docs-declarations-list [declarations]="docItem.declarations.components" type="components">
+    <h3>Has components declarations:</h3>
+  </fs-docs-declarations-list>
+</ng-container>
+
+<ng-container *ngIf="docItem.declarations.directives.length > 0">
+  <fs-docs-declarations-list [declarations]="docItem.declarations.directives" type="directivies">
+    <h3>Has directives declarations:</h3>
+  </fs-docs-declarations-list>
+</ng-container>
+
+<ng-container *ngIf="docItem.declarations.pipes.length > 0">
+  <fs-docs-declarations-list [declarations]="docItem.declarations.pipes" type="pipes">
+    <h3>Has pipes declarations:</h3>
+  </fs-docs-declarations-list>
+</ng-container>
+
+<!--<ng-container *ngIf="docItem.providers.length > 0">-->
+<!--  <fs-docs-declarations-list [declarations]="docItem.providers" type="providers">-->
+<!--    <h3>Has pipes declarations:</h3>-->
+<!--  </fs-docs-declarations-list>-->
+<!--</ng-container>-->
+
