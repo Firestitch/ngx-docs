@@ -1,7 +1,7 @@
 {
   "extends": "./tools/config/tsconfig.cli.json",
   "compilerOptions": {
-    "module": "esnext",
+    "module": "es2020",
     "paths": {
       "@firestitch/package": [
         "src/public_api.ts"
